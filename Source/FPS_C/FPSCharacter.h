@@ -35,5 +35,23 @@ public:
 	// Clears jump flag when key is relaesed
 	UFUNCTION()
 	void OnStopJump();
+	// handles firing
+	UFUNCTION()
+	void OnFire();
 
+	/** First person camera */
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
+	UCameraComponent* FirstPersonCamera;
+
+	/** Pawn mesh: 1st person view (arms; seen only by self */
+	UPROPERTY(VisibleDefaultsOnly, Category = Mesh)
+	USkeletalMeshComponent* FirstPersonMesh;
+
+	/** Porjectile class to spawn */
+	UPROPERTY(EditDefaultsOnly, Category = Projectile)
+	TSubclassOf<class AFPSProjectile> ProjectileClass;
+
+	/** Gun muzzle's offset from the camera location */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
+	FVector MuzzleOffset;
 };
