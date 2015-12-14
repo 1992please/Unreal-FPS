@@ -114,7 +114,7 @@ void AFPSCharacter::OnFire()
 		//MuzzleOffset is in camera space, so transform it to world space before offsetting from the camera to find the final muzzle position
 		FVector const MuzzleLocation = CameraLoc + FTransform(CameraRot).TransformVector(MuzzleOffset);
 		FRotator MuzzleRotation = CameraRot;
-		MuzzleRotation.Pitch += 10.0f; // skew the aim upwards a bit
+		MuzzleRotation.Pitch += 8.0f; // skew the aim upwards a bit
 		UWorld* const World = GetWorld();
 		if (World)
 		{
