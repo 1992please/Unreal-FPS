@@ -2,6 +2,7 @@
 
 #include "FPS_C.h"
 #include "FPSGameMode.h"
+#include "FPSHUD.h"
 
 AFPSGameMode::AFPSGameMode()
 {
@@ -12,6 +13,7 @@ AFPSGameMode::AFPSGameMode()
 	{
 		DefaultPawnClass = PlayerPawnObject.Class;
 	}
+	HUDClass = AFPSHUD::StaticClass();
 }
 
 void AFPSGameMode::StartPlay()

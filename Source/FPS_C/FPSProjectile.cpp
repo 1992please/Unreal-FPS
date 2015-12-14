@@ -57,7 +57,7 @@ void AFPSProjectile::InitVelocity(const FVector& ShootDirection)
 
 void AFPSProjectile::OnHit(AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
 {
-	if (OtherActor && (OtherActor != this) && OtherComp)
+	if (OtherActor && (OtherActor != this) && OtherComp && OtherComp->Mobility == EComponentMobility::Movable && OtherComp->IsSimulatingPhysics())
 	{
 		OtherComp->AddImpulseAtLocation(ProjectileMovement->Velocity * 100.0f, Hit.ImpactPoint);
 	}
